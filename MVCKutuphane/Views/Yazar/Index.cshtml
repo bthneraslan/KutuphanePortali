@@ -1,0 +1,30 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<TBLYAZAR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h3>YAZARLAR</h3>
+<table class="table table-striped">
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th>YAZAR ID</th>
+        <th>YAZAR AD</th>
+        <th>YAZAR SOYAD</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>YAZARIN KİTAPLARI</th>
+    </tr>
+    @foreach (var yzr in Model)
+    {
+        <tr>
+            <th>@yzr.ID</th>
+            <td>@yzr.AD</td>
+            <td>@yzr.SOYAD</td>
+            <td>@Html.ActionLink("Sil", "YazarSil", new { id = yzr.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istiyor musunuz?')" })</td>
+            <td><a href="/Yazar/YazarGetir/@yzr.ID" class="btn btn-warning">GÜNCELLE</a></td>
+            <td><a href="/Yazar/YazarKitaplar/@yzr.ID" class="btn btn-success" >Yazarın Kitapları</a></td>
+        </tr>
+    }
+</table>
+<a href="/Yazar/YazarEkle/" class="btn btn-primary">Yeni Yazar Ekle</a>

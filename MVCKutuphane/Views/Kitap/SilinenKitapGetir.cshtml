@@ -1,0 +1,41 @@
+﻿@using MVCKutuphane.Models.Entity
+@{
+    ViewBag.Title = "SilinenKitapGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h3>KİTAPLAR</h3>
+<div style="margin-bottom:15px; margin-top:15px;">
+    <input type="text" class="form-control" placeholder="Aranacak kitap ismini giriniz..." />
+</div>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kitap Adı</th>
+        <th>Kitap Yazarı</th>
+        <th>Kategori</th>
+        <th>Basım Yılı</th>
+        <th>Yayınevi</th>
+        <th>Sayfa Sayısı</th>
+        <th>Durum</th>
+        <th>Silinen Kitap Getirme</th>
+
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <th>@i.ID</th>
+            <td>@i.AD</td>
+            <td>@i.TBLYAZAR.AD</td>
+            <td>@i.TBLKATEGORI.AD</td>
+            <td>@i.BASIMYIL</td>
+            <td>@i.YAYINEVI</td>
+            <td>@i.SAYFA</td>
+            <td>@i.DURUM</td>
+            <td><a href="/Kitap/KitapGeriGetir/@i.ID" class="btn btn-danger">Kitabı Listeye Ekle</a></td>
+
+
+        </tr>
+    }
+</table>
+

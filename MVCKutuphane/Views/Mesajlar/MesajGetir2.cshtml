@@ -1,0 +1,36 @@
+﻿@model MVCKutuphane.Models.Entity.TBLMESAJLAR
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/_LayoutPanelim.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                @Html.Action("Partial1")
+                <div class="col-md-9">
+                    <div class="card card-primary card-outline">
+                        <div class="card-body p-0">
+                            <div class="mailbox-read-info">
+                                <h5>@Html.DisplayFor(x => x.KONU)</h5>
+                                <h6>
+                                    Kime: @Html.DisplayFor(x => x.ALICI)
+                                    <span class="mailbox-read-time float-right">@Html.DisplayFor(x => x.TARIH)</span>
+                                </h6>
+                            </div>
+                            <div class="mailbox-read-message">
+                                <p>@Html.DisplayFor(x => x.ICERIK)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

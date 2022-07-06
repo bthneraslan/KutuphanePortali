@@ -1,0 +1,68 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<TBLADMIN>
+@{
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+
+<title>Admin Liste</title>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>KULLANICI</th>
+        <th>YETKİ</th>
+        <th>SİL</th>
+        <th>DÜZENLE</th>
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+
+            <td>@i.ID</td>
+            <td>@i.KULLANICI</td>
+            <td>@i.YETKI</td>
+            <td>
+                <a class="btn btn-info btn-sm" href="/Ayarlar/AdminGetir/@i.ID">
+                    <i class="fas fa-pencil-alt">
+                    </i>
+                    Düzenle
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-danger btn-sm" href="/Ayarlar/AdminSil/@i.ID">
+                    <i class="fas fa-trash">
+                    </i>
+                    Sil
+                </a>
+            </td>
+
+        </tr>
+    }
+</table>
+<button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">Yeni Admin Ekle</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Admin Ekleme Paneli</h3>
+            </div>
+            <form method="post" action="/Ayarlar/YeniAdmin/">
+                <div class="modal-body">
+                    <label>Kullanıcı Adı</label>
+                    <input class="form-control" type="text" name="KULLANICI" />
+                    <br />
+                    <label>Şifre</label>
+                    <input class="form-control" type="text" name="SIFRE" />
+                    <br />
+                    <label>Yetki</label>
+                    <input class="form-control" type="text" name="YETKI" />
+                    <br />
+                    <button class="btn btn-info">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

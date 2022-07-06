@@ -1,0 +1,49 @@
+﻿@model MVCKutuphane.Models.Entity.TBLUYELER
+@{
+    ViewBag.Title = "UyeEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Üye Adı</label>
+        @Html.TextBoxFor(k => k.AD, new { @class = "form-control", @placeholder = "Üye adı Giriniz.." })
+        @Html.ValidationMessageFor(p => p.AD, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Üye Soyadı</label>
+        @Html.TextBoxFor(k => k.SOYAD, new { @class = "form-control", @placeholder = "Üye soyadı Giriniz.." })
+        @Html.ValidationMessageFor(p => p.SOYAD, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Üye Maili</label>
+        @Html.TextBoxFor(k => k.MAIL, new { @class = "form-control", @placeholder = "Mail Giriniz.." })
+    </div>
+    <div style="margin-top:15px">
+        <label>Üye Kullanıcı adı</label>
+        @Html.TextBoxFor(k => k.KULLANICIADI, new { @class = "form-control", @placeholder = "Kullanıcı adı Giriniz.." })
+    </div>
+    <div style="margin-top:15px">
+        <label>Üye Şifresi</label>
+        @Html.TextBoxFor(k => k.SIFRE, new { @class = "form-control", @placeholder = "Şifre Giriniz.." })
+    </div>
+    <div style="margin-top:15px">
+        <label>Fotoğraf</label>
+        @Html.TextBoxFor(k => k.FOTOGRAF, new { @class = "form-control", @placeholder = "Fotoğraf adresi Giriniz.." })
+    </div>
+    <div style="margin-top:15px">
+        <label>Üye Telefonu</label>
+        @Html.TextBoxFor(k => k.TELEFON, new { @class = "form-control", @placeholder = "Telefon Giriniz.." })
+    </div>
+    <div style="margin-top:15px">
+        <label>Okul Adı</label>
+        @Html.TextBoxFor(k => k.OKUL, new { @class = "form-control", @placeholder = "Okul adı Giriniz.." })
+    </div>
+
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Üye Ekle</button>
+    </div>
+</form>
+

@@ -1,0 +1,29 @@
+﻿@using MVCKutuphane.Models.Entity;
+@model List<TBLKITAP>
+@{
+    ViewBag.Title = "YazarKitaplar";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>@ViewBag.yazarad1</h2>
+
+<br />
+
+<table class="table table-striped">
+    <tr style="background-color:rgb(252, 178, 22)">
+        <th>ID</th>
+        <th>Kitap Adı</th>
+        <th>Kategori</th>
+        <th>Yayınevi</th>
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.ID</td>
+            <td>@i.AD</td>
+            <td>@i.TBLKATEGORI.AD</td>
+            <td>@i.YAYINEVI</td>
+        </tr>
+    }
+</table>
+

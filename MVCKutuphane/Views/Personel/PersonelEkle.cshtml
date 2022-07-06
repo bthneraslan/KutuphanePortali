@@ -1,0 +1,20 @@
+﻿@model MVCKutuphane.Models.Entity.TBLPERSONEL
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Personel Adı Soyadı</label>
+        @Html.TextBoxFor(p => p.PERSONEL, new { @class = "form-control", @placeholder = "Personel adı soyadı Giriniz.." })
+        @Html.ValidationMessageFor(p => p.PERSONEL, "", new { @style = "color:red" })
+    </div>
+
+
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Personel Ekle</button>
+    </div>
+</form>
